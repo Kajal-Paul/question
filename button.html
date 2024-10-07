@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Button</title> <style>
+    #button{
+      position: relative;
+      left: 200px;
+    }
+  .body{
+
+   text-align: center;
+    height: 400px;
+    width: 300px;
+
+  }
+</style>
+</head>
+<body>
+  <center>
+  <div class="body">
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, facilis.</h1>
+  <button id="yes_button">Yes</button>
+  <button id="button">No</button>
+  <h3 id="ans"></h3>
+  </div>
+</center>
+  <script>
+    const button = document.querySelector("#button");
+    const ans = document.querySelector("#ans");
+    const mainbody = document.querySelector(".body");
+    const yesButton = document.querySelector("#yes_button");
+    
+
+    button.addEventListener('mouseover',moveButton);
+    yesButton.addEventListener('click',() => ans.innerText='ok');
+
+    function moveButton() {
+      const documentWidth = mainbody.offsetWidth  ;
+      const documentHeight = mainbody.offsetWidth  ;
+
+     let randomLeft = Math.random() *documentWidth+'px' ;
+     let randomTop = Math.random() *documentHeight +'px';
+      button.style.left=randomLeft;
+      button.style.top=randomTop;
+      ans.innerText = 'Tu Thorasa Pagal Hai Kya?'
+      setTimeout(() => ans.innerText = '', 1000);
+
+
+
+        }
+  </script>
+</body>
+</html>
